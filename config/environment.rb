@@ -10,8 +10,8 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
   config.plugins = [:community_engine, :white_list, :all]
-config.plugin_paths += ["#{RAILS_ROOT}/vendor/plugins/community_engine/plugins"]
-
+  config.plugin_paths += ["#{RAILS_ROOT}/vendor/plugins/community_engine/plugins"]
+  
   config.gem 'searchlogic'
   config.gem 'authlogic'
   config.gem 'ri_cal'
