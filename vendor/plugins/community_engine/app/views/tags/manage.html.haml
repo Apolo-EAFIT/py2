@@ -1,0 +1,37 @@
+.yui-b.sidebar
+  = render :partial => 'shared/admin_nav'
+  
+  -box do
+    %h3=:search.l
+    - form_for @search, :html => {:class => "MainForm"} do |f|
+
+      = f.label :name.l
+      = f.text_field :name_begins_with
+
+      %p= f.submit :search.l
+  
+#yui-main
+  .yui-b
+    -box do 
+      %h3=:tags.l
+
+      %table{:width=>"100%"}
+        %tr 
+          %th
+            =order @search, :by => :name, :as => :name.l            
+          %th 
+            =order @search, :by => :taggings_count, :as => "##{:taggings.l}"
+          %th=:actions.l
+
+        - for tag in @tags
+          %tr
+            %td= tag.name
+            %td= tag.taggings.size	
+            %td
+              = link_to :show.l, tag_path(tag)
+              | 
+              = link_to :edit.l, edit_tag_path(tag)
+              |
+              = link_to :destroy.l, tag_path(tag), :confirm => :are_you_sure.l, :method => :delete
+    .pagination=paginating_links @tags if @tags.page_count > 1
+
