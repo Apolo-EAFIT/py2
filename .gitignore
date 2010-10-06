@@ -17,4 +17,4 @@ db/*.sqlite3
 .DS_Store
 .svn
 config/deploy.rb
-config/production.rb
+config/environments/production.rb
