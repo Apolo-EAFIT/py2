@@ -1,0 +1,24 @@
+<% title "Attachment" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @attachment.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%=h @attachment.description %>
+</p>
+<p>
+  <strong>Attachable:</strong>
+  <%=h @attachment.attachable_id %>
+</p>
+<p>
+  <strong>Attachable Type:</strong>
+  <%=h @attachment.attachable_type %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_attachment_path(@attachment) %> |
+  <%= link_to "Destroy", @attachment, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", attachments_path %>
+</p>

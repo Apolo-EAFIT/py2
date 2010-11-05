@@ -1,0 +1,21 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Attachable</th>
+    <th>Attachable Type</th>
+  </tr>
+  <% for attachment in @attachments %>
+    <tr>
+      <td><%=h attachment.name %></td>
+      <td><%=h attachment.description %></td>
+      <td><%=h attachment.attachable_id %></td>
+      <td><%=h attachment.attachable_type %></td>
+      <td><%= link_to "Show", attachment %></td>
+      <td><%= link_to "Edit", edit_attachment_path(attachment) %></td>
+      <td><%= link_to "Destroy", attachment, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Attachment", new_user_attachment_path(@source) %></p>

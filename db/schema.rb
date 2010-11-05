@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101006170328) do
+ActiveRecord::Schema.define(:version => 20101105152449) do
 
   create_table "activities", :force => true do |t|
     t.integer  "user_id",    :limit => 10
@@ -57,6 +57,19 @@ ActiveRecord::Schema.define(:version => 20101006170328) do
     t.datetime "created_at"
     t.string   "thumbnail"
     t.integer  "parent_id"
+  end
+
+  create_table "attachments", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "attachable_id"
+    t.string   "attachable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "source_file_name"
+    t.string   "source_content_type"
+    t.integer  "source_file_size"
+    t.datetime "source_updated_at"
   end
 
   create_table "categories", :force => true do |t|

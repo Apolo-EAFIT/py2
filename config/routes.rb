@@ -1,4 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :attachments
+
+  map.resources :users do |user|
+    user.resources :attachments
+  end
   map.routes_from_plugin :community_engine
 
   # The priority is based upon order of creation: first created -> highest priority.
