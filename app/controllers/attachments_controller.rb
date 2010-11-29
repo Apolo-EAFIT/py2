@@ -54,11 +54,7 @@ class AttachmentsController < BaseController
   def find_source
     params.each do |name, value|
       if name =~ /(.+)_id$/
-        if $1 != "user"
-          @source = $1.classify.constantize.find(value)
-        else
-          @source = $1.classify.constantize.find_by_login(value)
-        end
+        @source = $1.classify.constantize.find(value)
         return
       end
     end
