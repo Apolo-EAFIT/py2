@@ -1,5 +1,4 @@
 require 'rexml/document'
-include REXML
 
 class SubjectsController < BaseController
   def index
