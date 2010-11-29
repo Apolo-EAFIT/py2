@@ -1,0 +1,9 @@
+<h1>Materias</h1><br/>
+<% @materias.each do |m| %>
+  <strong><%= m.name %></strong><br/>
+  codigo: <%= m.code %><br/>
+  profesor: <%= m.professor %><br/>
+  descipción: <%= m.description %><br/>
+  <%= link_to "ver_mas", :action => :show, :id => m.id %><br/><br/>
+<% end %><br/>
+<%= link_to "Cargar desde xml", :action => :load_from_xml %>

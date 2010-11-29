@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+   Document   : materias.xml
+   Created on : November 28, 2010, 4:05 PM
+   Author     : cfernandezg
+   Description:
+   Purpose of the document follows.
+  -->
+
+<materias>
+  <materia nombre="proyecto" codigo="ST0042" creditos="3" umes="3">
+    <profesor nombre="jaime acosta"/>
+    <descripcion>La descripcion de la materia</descripcion>
+    <programa url="www.programa.com"/>
+    <homepage url="www.home.com"/>"
+  </materia>
+  <materia nombre="topicos" codigo="ST0052" creditos="3" umes="3">
+    <profesor nombre="carlos"/>
+    <descripcion>La descripcion de la materia</descripcion>
+    <programa url="www.programa.com"/>
+    <homepage url="www.home.com"/>"
+  </materia>
+  <materia nombre="analisis" codigo="ST0038" creditos="3" umes="3">
+    <profesor nombre="miguel"/>
+    <descripcion>La descripcion de la materia</descripcion>
+    <programa url="www.programa.com"/>
+    <homepage url="www.home.com"/>"
+  </materia>
+  <materia nombre="bases de datos" codigo="ST0040" creditos="3" umes="3">
+    <profesor nombre="juan"/>
+    <descripcion>La descripcion de la materia</descripcion>
+    <programa url="www.programa.com"/>
+    <homepage url="www.home.com"/>"
+  </materia>
+  <materia nombre="sistemas operativos" codigo="ST0036" creditos="3" umes="3">
+    <profesor nombre="alberto"/>
+    <descripcion>La descripcion de la materia</descripcion>
+    <programa url="www.programa.com"/>
+    <homepage url="www.home.com"/>"
+  </materia>
+</materias>

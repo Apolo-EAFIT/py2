@@ -1,0 +1,9 @@
+<h1><%= @materia.name %></h1><br/>
+codigo: <%= @materia.code %><br/>
+creditos: <%= @materia.credits %><br/>
+umes: <%= @materia.umes %><br/>
+profesor: <%= @materia.professor %><br/>
+descipción: <%= @materia.description %><br/>
+programa: <%= link_to @materia.program, "http://#{@materia.program}" %><br/>
+página de la materia: <%= link_to @materia.homepage, "http://#{@materia.homepage}" %><br/><br/>
+<%= link_to "Todas las materias", :action => :list %>
