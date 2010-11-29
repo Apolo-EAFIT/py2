@@ -1,6 +1,8 @@
 class Attachment < ActiveRecord::Base
   include Common
+  
   belongs_to :attachable, :polymorphic => true
+  
   has_attached_file :source,
                     :url  => "/uploads/attachments/:id/:style-:basename.:extension",
                     :path => ":rails_root/public//uploads/attachments/:id/:style-:basename.:extension"
