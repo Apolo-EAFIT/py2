@@ -2,8 +2,6 @@
   <tr>
     <th>Name</th>
     <th>Description</th>
-    <th>Attachable</th>
-    <th>Attachable Type</th>
   </tr>
   <% for attachment in @attachments %>
     <tr>
@@ -11,9 +9,9 @@
       <td><%=h attachment.description %></td>
       <td><%=h attachment.attachable_id %></td>
       <td><%=h attachment.attachable_type %></td>
-      <td><%= link_to "Show", attachment %></td>
-      <td><%= link_to "Edit", edit_attachment_path(attachment) %></td>
-      <td><%= link_to "Destroy", attachment, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Show", [@source, attachment] %></td>
+      <td><%= link_to "Edit", polymorphic_path([@source, attachment], :action  => :edit) %></td>
+      <td><%= link_to "Destroy", [@source, attachment], :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>

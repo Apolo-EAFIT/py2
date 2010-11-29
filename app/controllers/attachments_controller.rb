@@ -2,7 +2,11 @@ class AttachmentsController < BaseController
   before_filter :find_source
   
   def index
-    @attachments = @source.attachments.all
+    if @source
+      @attachments = @source.attachments.all
+    else
+      @attachments = Attachment.all
+    end
   end
   
   def show

@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :attachments
+  # map.resources :attachments
 
   map.resources :users do |user|
     user.resources :attachments

@@ -1,5 +1,3 @@
-<% title "Attachment" %>
-
 <p>
   <strong>Name:</strong>
   <%=h @attachment.name %>
@@ -8,13 +6,13 @@
   <strong>Description:</strong>
   <%=h @attachment.description %>
 </p>
+
 <p>
-  <strong>Attachable:</strong>
-  <%=h @attachment.attachable_id %>
-</p>
-<p>
-  <strong>Attachable Type:</strong>
-  <%=h @attachment.attachable_type %>
+  <% if @attachment.is_image? %>
+    <%= image_tag @attachment.source.url %>
+  <% else %>
+    <%= link_to "Descargar (#{@attachment.extension})", @attachment.source.url %>
+  <% end %>
 </p>
 
 <p>
