@@ -389,7 +389,7 @@ Ajax.Autocompleter = Class.create(Autocompleter.Base, {
 //                    search anywhere in the string, additionally set
 //                    the option fullSearch to true (default: off).
 //
-// - fullSsearch - Search anywhere in autocomplete array strings.
+// - fullSsearch - search anywhere in autocomplete array strings.
 //
 // - partialChars - How many characters to enter before triggering
 //                   a partial match (unlike minChars, which defines
