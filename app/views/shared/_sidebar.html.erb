@@ -1,0 +1,61 @@
+<div id="sidebar" class="negative-margin shadowed">
+  <% if current_user %>
+  <div class="hello-user">
+    <div class="hi">
+      <%= image_tag current_user.avatar_photo_url(:thumb) %>
+      <span>Hola <%= current_user.name %></span>
+      <p>
+        <%= link_to "Editar perfil", edit_user_path(current_user) %>
+        <%= link_to "Cambiar mi imágen", user_photos_path(current_user) %>
+      </p>
+      <div class="clear"> </div>
+    </div>
+    <div>
+      <h3>Bienvenido a tu comunidad</h3>
+      <span> Un espacio para conocer, reflexionar y compartir información sobre el uso de las nuevas
+	     tecnologías para la innovación educativa.
+      </span>
+      <div class= "title"></div>
+    </div>
+    <div class="links">
+      <%= link_to "Mi perfil", dashboard_user_path(current_user) %>
+      <%= link_to "Mis publicaciones", user_publications_path(current_user) %>
+      <%= link_to "Mis imágenes", user_photos_path(current_user) %>
+      <% if can? :send_massive_emails, :all_users %>
+        <%= link_to "Enviar correo masivo", mass_email_url %>
+        <%= link_to "Administrar Comunidad", admin_dashboard_path %>
+      <% end %>
+      <%= link_to "Cerrar sesión", logout_url %>
+    </div>
+  </div>
+  <% end %>
+  <div class= "title">
+    <h2><%= link_to "Eventos", "#", :id => "events" %></h2>
+  </div>
+  
+  <div class="title">
+    <h2><%= link_to "Foros", forums_path, :id => "forums" %></h2>
+  </div>
+  
+  <div class="title">
+    <h2><%= link_to "En línea", users_path, :id => "users" %></h2>
+  </div>
+
+  <div id="user_list">
+    <% User.random_users.each do |user| %>
+      <%= link_to image_tag( user.avatar_photo_url(:thumb), :class => "small bordered"), user_path(user) %>
+    <% end %>
+  </div>
+  <%= link_to "Ver todos", users_path, :class=> "right" %>
+
+  <div class="title">
+    <h2 id="tag-title">Tags Populares</h2>
+  </div>
+  <div id="tagcloud">
+    <% tag_cloud Tag.popular(20), %w(nube1 nube2 nube3 nube4 nube5) do |t, css_class| %>
+      <%= link_to t, tag_path(t), :class => "#{css_class} cloud-item" %> 
+    <% end %>
+  </div>
+  <div class="clear"> </div>
+
+</div>

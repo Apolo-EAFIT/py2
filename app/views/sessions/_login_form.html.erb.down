@@ -1,0 +1,15 @@
+<div id="login-form" class="contentWrap">
+  <div id="login-inner">
+    <div id="login-content">
+      <%= image_tag 'titulo_login.gif', :id => "login-title" %>
+      
+      <p style="padding: 90px 0 0">
+        En este momento estamos actualizando nuestra plataforma. Volveremos pronto.
+      </p>
+      
+      <p>
+        Puedes encontrar la agenda de talleres <a  href="http://docentes.eafit.edu.co/images/oferta_formacion.jpg" target="_blank">aquí</a>.
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   # map.resources :attachments
 
+  map.resources :subjects, :collection => {:list => :get, :load_from_xml => :get}
+
   map.resources :users do |user|
     user.resources :attachments
   end

@@ -1,0 +1,265 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*body {
+  margin: 0px;
+  background: url(../imagenes/fondo_cuerpo.png) top center no-repeat #FFFFFF;
+}*/
+
+/*body,td,th,div {
+  font-family: "Trebuchet MS";
+  font-size: 12px;
+  color: #666666;
+}*/
+
+/*HEADER*/
+
+#header_bg{
+	width:100%;
+	background:#004B85 url(/images/eafit/fondo_top.png) top repeat-x;
+	border-bottom: 3px solid #004B85;
+	/*margin-bottom:20px;*/
+}
+
+#menu-subportales-bg {
+	background:#002846;
+	width:100%;
+	clear:both;
+	height:25px;
+}
+
+#menu-subportales {
+	width:960px;
+	clear:both;
+	margin: 0px auto;
+	height:25px;
+}
+
+.botones-subportales {
+	float: right;
+	margin:0px 20px 0px 0px;
+	padding:0px;
+}
+
+.botones-subportales li {
+	margin:0px;
+	padding:5px 4px 5px 4px;
+	float: left;
+	list-style:none;
+	text-transform: uppercase;
+}
+
+.botones-subportales li a {
+	display:block;
+	font-family: Arial;
+	font-size:10px;
+	color: #FFFFFF;
+	letter-spacing:-1px;
+	font-weight:normal;
+	text-decoration:none;
+}
+
+.botones-subportales li a:hover {
+	display:block;
+	font-family: Arial;
+	font-size:10px;
+	color: #77C6FF;
+	letter-spacing:-1px;
+	font-weight:normal;
+	text-decoration:none;
+}
+
+.linea-botones-subportales{
+	font-family: Arial;
+	font-size:10px;
+	color:#FFF;
+	padding: 0px -2px 0px -2px;
+}
+
+#header {
+	width: 960px;
+	height:90px;
+	margin: 0px auto 0px auto;
+}
+
+#logo {
+	width: 400px;
+	height: 80px;
+	background: url(/images/eafit/logocomunidad.jpg) bottom no-repeat; 
+	float:left;
+}
+#seccion img { margin-bottom:10px;}
+
+#seccion {
+	width: 305px;
+	height: 90px;
+	float:left;
+}
+
+#buscador {
+	width: 475px;
+	height: 40px;
+	float:right;
+}
+
+.buscar-form {
+	width:330px;
+	margin:25px 10px 5px 10px;
+	float:right;
+}
+
+.buscar-campo {
+	width: 250px;
+	height: 20px;
+	border: 1px solid #0064AE;
+	background: #002F51;
+	color:#FFFFFF;
+}
+
+.buscar-boton {
+	height: 20px;
+	border: 1px solid #004B85;
+	background: #004B85;
+	color:#FFFFFF;
+	font-family: Arial;
+	font-size:11px;
+}
+
+
+#caja1 {
+	width: 475px;
+	height: 30px;
+	margin: 0px auto 0px auto;
+	float:right;
+}
+
+#botones-caja1 {
+	float: right;
+	margin:10px 5px;
+	padding:0px;
+}
+
+#botones-caja1 li {
+	margin:10px 5px 0px 0px;
+	padding:0px;
+	float:left;
+	list-style:none;
+}
+
+#botones-caja1 li a {
+	display:block;
+	font-family:Arial;
+	font-size:10px;
+	color: #FFFFFF;
+	font-weight:normal;
+	text-decoration:none;
+	padding:2px 0px 0px 0px;
+}
+
+#botones-caja1 li a:hover {
+	color: #77C6FF;
+}
+
+.separador-caja1 {
+	width:2px;
+	height:15px;
+	border-right: 1px solid #0069B7;
+}
+
+/*CUERPO*/
+
+/*#contenido{
+  clear:both;
+  width:930px;
+  margin: 0px auto;
+}*/
+
+/*#cuerpo{
+  width:930px;
+  position:relative;
+}*/
+
+/*FOOTER*/
+
+#footer_bg{
+	clear:both;
+	width:100%;
+	background: #35434A url(/images/eafit/fondo_footer.png) bottom repeat-x  ;
+	border-top: #FFB921 3px solid;
+	margin-top:10px;
+}
+
+#footer{
+	width:960px;
+	margin: 0px auto;
+}
+.lista-footer {
+	margin: 20px 10px 10px 0px;
+	border-right: #FFFFFF solid 1px;
+	float: right;
+	padding-right: 10px;
+}
+
+.lista-footers{
+    margin: 20px 10px 10px 0px;
+	float: right;
+	padding-right: 10px;
+    list-style:none;
+}
+.botones-footer {
+	list-style:none;
+	margin:0px;
+	padding:0px;
+}
+
+.botones-footer ul li {
+	text-align:right;
+	list-style: none;
+}
+
+.botones-footer ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+.botones-footer li {
+	list-style:none;
+}
+
+.botones-footer li a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFFFFF;
+	text-decoration: none;
+	padding: 0px;
+	font-weight:normal;
+}
+
+.botones-footer li a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFB921;
+	text-decoration: none;
+	padding: 0px;
+	font-weight:normal;
+}
+
+#info-contacto {
+	margin: 20px 0px 10px 10px;
+	float: left;
+	font-size:11px;
+	color:#FFFFFF;
+}
+
+#linea-footer{
+	clear:both;
+	width:960px;
+	height:2px;
+}
+
+.amarillo {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	letter-spacing:-1px;
+	color: #FFB921;
+}

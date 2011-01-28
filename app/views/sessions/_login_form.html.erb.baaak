@@ -1,0 +1,36 @@
+<div id="login-form" class="contentWrap">
+  <div id="login-inner">
+    <div id="login-content">
+      <%= image_tag 'titulo_login.gif', :id => "login-title" %>
+      <% form_tag sessions_path, :method => :post do %>
+        <p>
+          Nombre de usuario <br />
+          <%= text_field_tag 'login', nil, :size => 25 %>
+        </p>
+        <p>
+          Contraseña <br />
+          <%= password_field_tag 'password', nil %>
+        </p>
+        <p><%= submit_tag :log_in.l %></p>
+      <% end %>
+      
+      <% unless flash[:notice].nil? %>
+      <div class="notice alert">
+        <%= flash[:notice] %>
+        <a href="#" class="close_alert"> cerrar </a>
+      </div>
+      <% end %>
+      
+      <% unless flash[:error].nil? %>
+      <div class="error alert">
+        <%= flash[:error] %>
+        <a href="#" class="close_alert"> cerrar </a>
+      </div>
+      <% end %>
+      
+      <p>
+        Recuerde que su usuario y contraseña son los mismos de su correo electrónico EAFIT.
+      </p>
+    </div>
+  </div>
+</div>

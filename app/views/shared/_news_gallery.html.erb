@@ -1,0 +1,21 @@
+<div id="featured" >
+  <ul class="ui-tabs-nav">
+	<% noticias.each_with_index do |n,i|%>
+		<li class="ui-tabs-nav-item <%= (i.zero? ? "ui-tabs-selected" : "") %>" id="nav-fragment-<%= i+1 %>">
+			<a href="#fragment-<%= i+1 %>">
+			<%= image_tag(n.photo.url(:small)) %><span><%= n.title %></span></a></li>
+	<% end %>
+   </ul>
+	<div class="images">
+	<% noticias.each_with_index do |n,i|%>
+		<div id="fragment-<%= i+1 %>" class="ui-tabs-panel actual-tab" style="">
+			<%= image_tag(n.photo.url(:titular)) %>
+			 <div class="info" >
+				<h2><%= link_to n.title, noticia_path(n) %></h2>
+				<p><%= n.small_snippet %>
+				<%= link_to "leer más", noticia_path(n) %></p>
+			 </div>
+	    </div>
+	<% end %>
+	</div>
+</div>

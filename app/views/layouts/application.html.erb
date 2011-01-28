@@ -1,0 +1,273 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Comunidad de Estudiantes
+de Ingeniería de Sistemas</title>
+
+  <%#= javascript_include_tag "jquery.min", "jquery.prettyPhoto", "jquery.ui.min","jquery.tools.min" %>
+  <%= javascript_include_tag "prototype.js", "jquery.min", "jquery.tools.min", "jquery.ui.min", "jquery.prettyPhoto", :cache => true %>
+
+  <%= stylesheet_link_tag "event_calendar", "prettyPhoto", "eafit","curriculovivo.css", "theme/slide_show.css", 'forum', :cache => true %>
+  
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "forum.js","effects.js","lightbox.js" , :plugin => "community_engine", :cache => "comengine" %>
+  <%= javascript_include_tag "flowplayer-3.1.4.min" %>
+
+  <%= javascript_include_tag "admin" if current_user and current_user.admin? %>
+
+  <%= javascript_include_tiny_mce_if_used %>
+
+  <%= tiny_mce if using_tiny_mce? %>
+
+
+  <%= javascript_include_tag "AC_RunActiveContent", :plugin => "community_engine" if current_page?(:controller => 'photos', :action => 'new') or current_page?(:controller => 'statistics', :action => 'index') %>
+
+  <%= yield(:head) %>
+
+  <% unless current_user %>
+  <% unless current_page?(login_path) %>
+  <noscript>
+    <meta http-equiv="refresh" content="2;url=<%= login_url %>">
+  </noscript>
+  <% end %>
+  <% end %>
+
+  <!--[if gte IE 5]>
+    <%= stylesheet_link_tag 'ie' %>
+  <![endif]-->
+  
+  <!--[if lte IE 7]>
+    <%= stylesheet_link_tag 'ie67' %>
+  <![endif]-->
+  
+  <!--[if (gte IE 6)&(lte IE 8)]>
+    <%= javascript_include_tag 'selectivizr' %>
+  <![endif]-->
+  
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-20097505-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  
+</head>
+<body>
+  <div id="out-container">
+
+
+
+    <!-- HEADER EAFIT -->
+    <div id="header_bg" style="background-color: #004B85; border-bottom: 3px solid #004B85;">
+      <div id="menu-subportales-bg">
+        <div id="menu-subportales">
+
+          <ul class="botones-subportales">
+            <li><a href="http://www.eafit.edu.co/investigacion">Investigaci&oacute;n</a></li>
+            <li class="linea-botones-subportales">|</li>
+            <li><a href="http://www.eafit.edu.co/cice">Cice</a></li>
+            <li class="linea-botones-subportales">|</li>
+            <li><a href="http://www.eafit.edu.co/cec">Educaci&oacute;n Continua</a></li>
+            <li class="linea-botones-subportales">|</li>
+            <li><a href="http://www.eafit.edu.co/idiomas">Idiomas</a></li>
+            <li class="linea-botones-subportales">|</li>
+            <li><a href="http://www.eafit.edu.co/cultura">Cultura</a></li>
+            <li class="linea-botones-subportales">|</li>
+            <li><a href="http://www.eafit.edu.co/biblioteca">Biblioteca</a></li>
+            <li class="linea-botones-subportales">|</li>
+            <li><a href="http://www.eafit.edu.co/international">International</a></li>
+          </ul>
+
+
+        </div>
+      </div>
+
+      <div id="header">
+        <div id="logo"></div>
+        <div id= "search">
+             <% form_for :search, :url =>{ :controller => :search, :action => :simple}, :method => :get do |f|%>
+                    <table>
+                      <tr>
+                        <td><%= text_field_tag :search, params[:search] %></td>
+                        <td><%= f.submit "Buscar", :name => nil %></td>
+                      </tr>
+                   </table>
+             <% end %>
+        </div>  
+      </div>
+    </div>
+
+
+
+<!-- FIN HEADER EAFIT -->
+
+
+
+<div class="clear"> </div>
+
+
+
+
+
+
+
+
+
+
+<noscript>
+  <div class="no-javascript-alert">
+    <p class="big">Este sitio requiere tener Javascript activado. Actívalo y vuelve a ingresar</p>
+    <p>Si no sabes cómo activarlo, haz clic <%= link_to "aquí","#" %></p>
+  </div>
+</noscript>
+
+<div id="bannertop-bg">
+
+  <div class="divbanner-top">
+    <%= link_to "INICIO", root_path %>
+    <%= link_to "Acerca de", "#" %>
+    <%= link_to "Directorio de Materias", list_subjects_path %>
+    <%= link_to "Banco de recursos", "#" %>
+    <%= link_to "Tips", "#" %>
+
+  </div>
+
+</div> <!-- end of bannertop-bg -->
+
+
+<div class="clear"> </div>
+
+
+<div id="content">
+
+
+  <!-- NAVIGATION -->
+  <%= render "shared/sidebar" %>
+
+  <div id="center">
+
+
+    <div id="flash-messages">
+      <% unless flash[:notice].nil? %>
+      <div class="notice alert">
+        <%= flash[:notice] %>
+        <a href="#" class="close_alert"> cerrar </a>
+      </div>
+      <% end %>
+
+      <% unless flash[:warning].nil? %>
+      <div class="warning alert">
+        <%= flash[:warning] %>
+        <a href="#" class="close_alert"> cerrar </a>
+      </div>
+      <% end %>
+
+      <% unless flash[:error].nil? %>
+      <div class="error alert">
+        <%= flash[:error] %>
+        <a href="#" class="close_alert"> cerrar </a>
+      </div>
+      <% end %>
+
+    </div> <!-- end of flash-messages -->
+
+    <div class="yui-b sidebar">
+      <%= render :partial => 'shared/admin_nav' %>
+    </div>
+
+    <%= yield %>
+
+
+  </div> <!-- End of center div -->
+
+  <div class="clear"></div>
+</div> <!-- End of content div -->
+
+<div class="clear"> </div>
+
+
+
+<!-- FOOTER EAFIT -->
+
+<div id="footer_bg">
+  <div id="footer">
+    <div id="info-contacto"><span class="amarillo">Universidad EAFIT</span><br />
+      L&iacute;nea de atenci&oacute;n al usuario<br />
+      Medell&iacute;n: (57) (4) - 448 95 00<br />
+      Resto del pa&iacute;s: 01 8000 515 900<br />
+      Conmutador: (57) (4) - 2619500<br />
+      Correo: admisiones.registro@eafit.edu.co<br />
+      Direcci&oacute;n: Carrera 49 N&deg; 7 Sur - 50<br />
+      Medell&iacute;n - Colombia - Suram&eacute;rica<br />
+      Copyright 2010 &reg; <br />
+      Todos los Derechos Reservados</div>    
+
+      <!--<div class="lista-footer">
+        <ul class="botones-footer">
+          <li class="amarillo">Alianzas</li>
+          <li><a href="http://www.colombiaaprende.edu.co" target="_blank">Colombia Aprende</a></li>
+          <li><a href="http://www.colombiaespasion.com" target="_blank">Colombia es Pasión</a></li>
+          <li><a href="http://www.medellincomovamos.org" target="_blank">Medellín cómo vamos</a></li>
+          <li><a href="http://www.faae.org.co" target="_blank">FAAE</a></li>
+          <li><a href="http://www.birdantioquia.org.co" target="_blank">Bird Antioquia</a></li>
+          <li><a href="http://www.universia.net.co" target="_blank">Universia</a></li>
+          <li><a href="http://www.ruana.edu.co" target="_blank">Ruana</a></li>
+          <li><a href="http://www.renata.edu.co" target="_blank">Renata</a></li>
+          <li><a href="http://www.cis.org.co" target="_blank">Cis</a></li>
+
+        </ul>
+      </div>-->
+      <div class= "lista-footers">
+          <li class="amarillo">Servicios Web</li>
+          <div class="lista-footer">
+            <ul class="botones-footer">
+              <li><a href="http://blogs.eafit.edu.co" target="_blank">Blogs EAFIT</a></li>
+              <li><a href="http://www.eafit.edu.co/servicios-en-linea/eafit-virtual/Paginas/inicio.aspx" target="_blank">EAFIT virtual</a></li>
+              <li><a href="http://www.eafit.edu.co/servicios-en-linea/aplicaciones-web/Paginas/aplicaciones-web.aspx" target="_blank">Aplicaciones Web</a></li>
+              <li><a href="http://portus.eafit.edu.co" target="_blank">Correo Web</a></li>
+              <li><a href="http://www.eafit.edu.co/ulises" target="_blank">Ulises</a></li>
+            </ul>
+          </div>
+          <div class="lista-footer">
+            <ul class = "botones-footer">
+              <li><a href="http://interactiva.eafit.edu.co" target="_blank">EAFIT Interactiva</a></li>
+              <li><a href="http://entrenos.eafit.edu.co" target="_blank">Intranet Entrenos</a></li>
+              <li><a href="http://www.eafit.edu.co/agencia-noticias" target="_blank">Agencia de Noticias</a></li>
+              <li><a href="http://envivo.eafit.edu.co" target="_blank">Canal Envivo</a></li>
+              <li><a href="http://acustica.eafit.edu.co" target="_blank">Emisora Acústica</a></li>
+            </ul>
+         </div>
+     </div>
+
+      <!--<div class="lista-footer">
+        <ul class="botones-footer">
+
+          <li class="amarillo">Contáctenos</li>
+          <li><a href="/institucional/contacto/Paginas/contacto-eafit.aspx" target="_blank">Contacto</a></li>
+          <li><a href="http://www2.eafit.edu.co/bisu" target="_blank">Sugerencias</a></li>
+          <li><a href="http://www.eafit.edu.co/registro" target="_blank">Suscríbase</a></li>
+          <li><a href="/servicios-en-linea/Paginas/directorio-redes-sociales.aspx" target="_blank">Directorio de redes sociales</a></li>
+          <li><a href="http://www.elempleo.com/sitios_empresariales/eafit/index.asp" target="_blank">Trabaje con nosotros</a><a href="#"></a></li>
+        </ul>
+      </div> -->
+    </div>
+    <div id="linea-footer"></div>
+  </div>
+  
+  <!-- FIN FOOTER EAFIT -->
+
+</div>
+
+
+    
+</body>
+</html>
+

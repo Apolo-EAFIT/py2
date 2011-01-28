@@ -1,0 +1,26 @@
+-box do
+  - if @user
+    %h3= greeting
+    %dl.vcard
+      %dt.photo
+        = link_to(image_tag(@user.avatar_photo_url(:thumb)), @user.login)
+      %dd.fn
+        %ul
+          %li= link_to("Editar Perfil", edit_user_path(@user))
+          %li= link_to("Cambiar mi imagen", edit_user_path(@user))
+          %li= link_to("Cerrar Sesión", logout_path)
+    %ul
+      %li= link_to("Mi Perfil", user_path(@user))
+      %li= link_to("Mis Mensajes", "#")
+      %li= link_to("Mi Publicaciones", "#")
+      %li= link_to("Mi Imagenes", "#")
+      %li= link_to("Actividades y Notificaciones", "#")
+      %li= link_to("Mis Comentarios", "#")
+      %li= link_to("Cerrar Sesión", logout_path)
+
+
+  %h3 Foros
+  Participa en los foros.
+
+  %h3 Agenda
+  Consulte aquí las fechas de los eventos y capacitaciones que se desarrollarán en la Universidad.

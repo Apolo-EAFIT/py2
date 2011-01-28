@@ -1,0 +1,24 @@
+-unless AppConfig.closed_beta_mode
+  .yui-b.sidebar=render :partial => 'shared/login_sidebar'
+  
+%h3
+  =:log_in_to_site.l(:site => AppConfig.community_name)
+- form_tag sessions_path, :class => 'MainForm' do
+  %fieldset
+    %label{"for"=>"login"}=:username.l
+    = text_field_tag 'login', nil, :size => 25
+    %label{"for"=>"password"}=:password.l
+    = password_field_tag 'password', nil
+    %label{"for"=>"remember_me"}
+      =:remember_me.l
+      = check_box_tag 'remember_me'
+  %p
+    = submit_tag :log_in.l
+
+-content_for :head do
+  %script{:type => "text/javascript"} 
+    :plain 
+      $j("#beta_signup_email").click(function() { 
+        this.value = ""; 
+        this.style["text-align"]="left"; 
+        });

@@ -1,0 +1,56 @@
+/** IE STYLESHEET **/
+
+/*           GENERAL PATCHES               */
+.gainLayout {height: 1%; zoom: 1;}
+.negative-margin{zoom: 1; position: relative; }
+
+
+.shadowed{
+  box-shadow: 0px 5px 25px lightgray; /* Opera 10.5+, future browsers and IE6+ using IE-CSS3 */
+  behavior: url(/ie-css3.htc);
+}
+
+
+/* 
+Title:		IE patches
+Author: 	dan@simplebits.com
+*/
+
+/* nav fix */
+*:first-child+html #nav li {
+  width: 24.9%;
+}
+
+/* PNG fix */
+* html #selector { /* for IE<6 */
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale src='img/image.png'); background-image: none; background-repeat: no-repeat; background-color: transparent;
+}
+
+/* self-clear floats */
+* html .group { /* IE6 */ height: 1%; }
+*:first-child+html .group { /* IE7 */ min-height: 1px; }
+
+
+
+
+/*           CUSTOM STYLES               */
+img.profile-gallery-photo {width: 60px;}
+#sidebar {margin-top: -25px;}
+#center {margin-top: 20px;}
+#content { /*border: 1px solid black;*/ }
+
+#sidebar #users  { background-image: url("/images/plantilla/ico_usr_usuarios.jpg") no-repeat center left; white-space:nowrap; position:relative;}
+#sidebar #forums { background-image: url("/images/plantilla/ico_usr_foro.jpg") no-repeat center left; white-space:nowrap; position:relative;}
+#sidebar #events { background-image: url("/images/plantilla/ico_usr_agenda.jpg") no-repeat center left; white-space:nowrap; position:relative;}
+
+.divbanner-top a:link { color: #FFFFFF; font-size: 13px;/*text-transform: uppercase;*/ text-decoration: none; padding: 22px 44px; /*font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; */   margin: 0px; vertical-align: middle;}
+.divbanner-top a:visited { color: #FFFFFF; font-size: 13px; /*text-transform: uppercase;*/ text-decoration: none; /*font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; */  vertical-align: middle;}
+
+.menu-span {white-space:nowrap; position:relative; cursor: pointer;}
+
+
+.divbanner-bottom a,
+.divbanner-bottom a:hover,
+.divbanner-bottom a:visited { color: #333333; font-size: 13px; letter-spacing: -1px; text-transform: uppercase; line-height: 39px; text-decoration: none; text-align: center; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; }
+
+.divbanner-bottom a:hover {text-decoration: underline;}

@@ -1,0 +1,20 @@
+- if current_user and current_user.admin?
+  %h3{:id=> "admin-title"}
+    Herramientas de Administración (
+    %span{:id => "admin-title-desc"} ocultar
+    )
+  %ul.list{:id=> "admin-tools"}
+    %li= link_to_unless_current :users.l, admin_users_path
+    %li= link_to_unless_current :events.l, admin_events_path
+    %li= link_to_unless_current :statistics.l, statistics_path
+    %li= link_to_unless_current :comments.l, admin_comments_path 
+    %li= link_to_unless_current :tags.l, admin_tags_path
+    %li= link_to_unless_current :admin_pages.l, admin_pages_path
+    %li= link_to_unless_current "Noticias", noticias_path
+    %li= link_to_unless_current :section_headers.l, section_headers_path
+    %li= link_to_unless_current "Talleres", workshops_path
+    %li= link_to_unless_current "Galeria de talleres", galeria_talleres_workshops_path
+    %li= link_to_unless_current "Galeria de laboratorios", galeria_laboratorios_workshops_path
+    %li= link_to_unless_current "Correo Masivo", mass_email_path
+    
+  .clear
